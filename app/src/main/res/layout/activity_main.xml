@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?><!--Declares version and encoding -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <!--Above code, root element of layout file. Declares XML namespaces. Sets width and height to match parent view. tools:context attribute specifies the activity class associated with this layout.-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_load_image"
+        android:text="Load Image"
+        app:layout_constraintEnd_toStartOf="@id/guideline2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        android:layout_marginTop="18dp"
+        />
+    <!--Button view with ID btn_load_image, Specifies text to display on the image. Sets position using ConstraintLayout. layout_marginTop="18dp" adds margin at the top-->
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="450dp"
+        android:id="@+id/imageView"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:src="@drawable/placeholder_vertical"
+    />
+    <!--ImageView with id imageView. Specifies size of the image and position using constraints. layout_constraintHorizontal_bias centres the image. Also sets placeholder image -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_capture_image"
+        android:text="Take Image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline2"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        android:layout_marginTop="18dp"/>
+    <!--Similar to above button code-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview"
+        android:text="Output: "
+        android:textSize="21sp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_capture_image"
+        android:layout_marginStart="36dp"
+        android:textColor="@android:color/black"
+        />
+    <!--        app:layoutconstraintTop_toBottomOf="@id/btn_capture_image"-->
+    <!--Creates black coloured text that displays Output:. has ID textview a margin of 36dp and size of 21sp-->
+
+    <TextView
+        android:id="@+id/tv_output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="Result here"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="21sp"
+        app:layout_constraintStart_toEndOf="@id/textview"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="556dp" />
+    <!--Similar to other text view this one displays the result, species of bird-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click on the result to search on Google"
+        app:layout_constraintTop_toBottomOf="@id/textview"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="36dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="13sp"
+        />
+    <!--Similar to other text view this one tells the user to Click on the result to search on Google-->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline2"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+    <!--Creates a vertical guideline in a constraint layout. Width and height set to wrap content. ID of guideline2. Often used to help with alignment. layout_constraintGuide_percent sets position of the guideline as a percentage pf width and layout set to 0.5 so will be positioned in the layout horizontally. -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
